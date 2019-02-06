@@ -15,6 +15,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise', '~> 4.5'
 gem 'bootstrap', '~> 4.2', '>= 4.2.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'acts_as_votable', '~> 0.12.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
