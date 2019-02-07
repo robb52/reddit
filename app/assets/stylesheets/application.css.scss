@@ -20,7 +20,7 @@
   letter-spacing: -1px;
   padding: 15px 0;
   a {
-    color: #2F363E
+    color: #2F363E;
   }
 }
 
@@ -52,3 +52,32 @@
     }
   }
 }
+
+.author {
+  font-size: 18px;
+}
+
+small {
+  font-size: 23px;
+  color: #2F363E;
+}
+
+a {
+  padding: 3px;
+}
+
+.btn.btn-primary {
+  margin-bottom: 40px;
+}
+
+h1{
+  border-bottom: 1px solid #E9E9E9;
+}
+
+.btn.btn-outline-secondary {
+  margin-bottom: 40px;
+}
+
+
+
+

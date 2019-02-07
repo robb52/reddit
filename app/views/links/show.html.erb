@@ -1,6 +1,6 @@
 <div class="page-header">
   <h1><a href="<%= @link.url %>"><%= @link.title %></a><br> <small>Submitted by 
-    <%= @link.user.email %></small></h1>
+    <%= @link.user.name %></small></h1>
 </div>
 
 <div class="btn-group">
@@ -12,4 +12,32 @@
     <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-outline-secondary" %>
     <%= link_to 'Delete', @link, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-outline-secondary" %>
   </div>
+<% end %>
+
+<div class="btn-group float-right">
+  <%= link_to like_link_path(@link), method: :put, class: "btn btn-outline-secondary btn-sm" do %>
+    <i class="far fa-thumbs-up"></i>
+    Upvote
+    <%= @link.get_upvotes.size %>
+  <% end %>
+  <%= link_to dislike_link_path(@link), method: :put, class: "btn btn-outline-secondary btn-sm" do %>
+    <i class="far fa-thumbs-down"></i>
+    Downvote
+    <%= @link.get_downvotes.size %>
+  <% end %>
+</div>
+
+<h3 class="comments_title">
+  <%= @link.comments.count %> Comments
+</h3>
+
+<div id="comments">
+  <%= render :partial => @link.comments %>
+</div>
+<%= simple_form_for [@link, Comment.new] do |f| %>
+  <div class="field">
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <br>
+  <%= f.submit "Add Comment", class: "btn btn-primary" %>
 <% end %>
